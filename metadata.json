@@ -1,0 +1,5 @@
+{
+  "name": "RED-S Risk Assessment",
+  "description": "An AI-powered non-invasive risk score for athletes to detect Relative Energy Deficiency in Sport (RED-S) early.",
+  "requestFramePermissions": []
+}

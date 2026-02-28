@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-red: #d3252a;
+  --color-brand-green: #18b155;
+  --color-brand-bg: #e5e1c6;
+  --color-brand-black: #1a1a1a;
+  --color-brand-white: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-black font-sans antialiased overflow-x-hidden;
+  }
+}
+
+.card-sleek {
+  @apply bg-white border border-brand-black/5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-3xl;
+}
+
+.btn-sleek-primary {
+  @apply px-6 py-4 rounded-2xl font-bold transition-all active:scale-[0.98] bg-brand-black text-white hover:bg-brand-red disabled:opacity-50;
+}
+
+.btn-sleek-outline {
+  @apply px-6 py-4 rounded-2xl font-bold transition-all active:scale-[0.98] border-2 border-brand-black/10 text-brand-black hover:border-brand-black hover:bg-brand-black/5;
+}
+
+.option-card {
+  @apply p-5 rounded-2xl border-2 border-brand-black/5 bg-white transition-all cursor-pointer hover:border-brand-black/20;
+}
+
+.option-card-selected {
+  @apply border-brand-red bg-brand-red/5;
+}
+
+/* Mobile optimizations */
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Hide number input spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-black/10 rounded-full;
+}
